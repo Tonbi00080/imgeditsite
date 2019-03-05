@@ -1,0 +1,29 @@
+<!-- staticのファイル読み込み-->
+{% load staticfiles %}
+<!-- 画像ファイルのロード-->
+{% load static %}
+<head>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap-grid.css' %}" /> <!-- ← 追加 -->
+  <link rel="stylesheet" type="text/css" href="{% static 'css/common-layout.css' %}" /> <!-- ← 追加 -->
+</head>
+</head>
+<html>
+{% include 'imgapp/header.html' %}
+<body>
+<title>画像編集</title>
+<div class="row">
+  <div class="col-md-8">
+    <img vspace="5px" hspace="5px" width="70%" height="70%" src="{% static "img/recog_face.jpg" %}" alt="recognition face">
+    <p>
+      当サイトは機械学習のアルゴリズムを利用して、あなたの持っている写真を簡単に加工してくれます。
+      <br>
+      <a href="upload">画像を編集する</a>
+    </p>
+  </div>
+  <div class="col-md-4">
+    {% include 'imgapp/sidebar.html' %}
+  </div>
+</div>
+</body>
+{% include 'imgapp/footer.html' %}
+</html>

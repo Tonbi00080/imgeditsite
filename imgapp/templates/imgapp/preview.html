@@ -1,0 +1,28 @@
+<!-- staticのファイル読み込み-->
+{% load staticfiles %}
+<!-- 画像ファイルのロード-->
+{% load static %}
+<head>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap-grid.css' %}" /> <!-- ← 追加 -->
+  <link rel="stylesheet" type="text/css" href="{% static 'css/common-layout.css' %}" /> <!-- ← 追加 -->
+</head>
+<html>
+{% include 'imgapp/header.html' %}
+<body>
+<title>画像編集プレビューフォーム</title>
+<div class="row">
+  <div class="col-md-8">
+    <p>
+      プレビューフォーム
+    </p>
+    <a class="" href="upload">戻る</a>
+    <br>
+    <a class="" href="complete">OK</a>
+  </div>
+  <div class="col-md-4">
+    {% include 'imgapp/sidebar.html' %}
+  </div>
+</div>
+</body>
+{% include 'imgapp/footer.html' %}
+</html>

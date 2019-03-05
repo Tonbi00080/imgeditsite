@@ -1,0 +1,26 @@
+<!-- staticのファイル読み込み-->
+{% load staticfiles %}
+<!-- 画像ファイルのロード-->
+{% load static %}
+<head>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap-grid.css' %}" /> <!-- ← 追加 -->
+  <link rel="stylesheet" type="text/css" href="{% static 'css/common-layout.css' %}" /> <!-- ← 追加 -->
+</head>
+<html>
+{% include 'imgapp/header.html' %}
+<body>
+<title>画像編集入力フォーム</title>
+<div class="row">
+  <div class="col-md-8">
+    <p>
+      ご利用ありがとうございました。
+    </p>
+    <a class="" href="http://127.0.0.1:8000/imgapp/">トップ画面へ</a>
+  </div>
+  <div class="col-md-4">
+    {% include 'imgapp/sidebar.html' %}
+  </div>
+</div>
+</body>
+{% include 'imgapp/footer.html' %}
+</html>
