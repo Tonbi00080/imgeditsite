@@ -20,9 +20,7 @@
         {{ form.as_p }}
         <button type="submit">Upload</button>
     </form>
-    <a class="" href="http://127.0.0.1:8000/imgapp/">戻る</a>
-    <br>
-    <a class="" href="preview">プレビュー</a>
+    <a class="" href="{% url 'imgapp:index' %}">戻る</a>
   </div>
   <div class="col-md-4">
     {% include 'imgapp/sidebar.html' %}

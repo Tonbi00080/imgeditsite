@@ -12,11 +12,11 @@ def upload(request):
         if form.is_valid():
             # ファイルの保存
             form.save()
-            obj = Image.objects.all()
-            import pdb; pdb.set_trace()
+            # descriptionに入力した値と同じデータの画像を取得する
+            item = Image.objects.get(description=form.cleaned_data['description'])
             return render(request,'imgapp/preview.html',{
             'form': form,
-            'obj': obj
+            'item': item
             })
     else:
         form = ImageForm()

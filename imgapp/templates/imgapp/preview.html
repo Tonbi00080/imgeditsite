@@ -14,10 +14,12 @@
   <div class="col-md-8">
     <p>
       プレビューフォーム
+      <h3> {{ item.description }}</h3>
+      <img src="{{ item.img.url }}"/>
     </p>
-    <a class="" href="upload">戻る</a>
+    <a class="" href="{% url 'imgapp:upload' %}">戻る</a>
     <br>
-    <a class="" href="complete">OK</a>
+    <a class="" href="{% url 'imgapp:complete' %}">OK</a>
   </div>
   <div class="col-md-4">
     {% include 'imgapp/sidebar.html' %}
