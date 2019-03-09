@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .forms import ImageForm
 from .models import Image
+from .editImage import editImage
 
 # Create your views here.
 def index(request):
@@ -14,6 +15,9 @@ def upload(request):
             form.save()
             # descriptionに入力した値と同じデータの画像を取得する
             item = Image.objects.get(description=form.cleaned_data['description'])
+            editImage(item.img.url, item.description)
+            item.edittedImg = "edittedImg/" + item.description + "_gray.jpg"
+            item.save()
             return render(request,'imgapp/preview.html',{
             'form': form,
             'item': item
