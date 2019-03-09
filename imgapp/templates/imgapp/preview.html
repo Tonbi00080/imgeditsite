@@ -12,11 +12,14 @@
 <title>画像編集プレビューフォーム</title>
 <div class="row">
   <div class="col-md-8">
-    <p>
-      プレビューフォーム
+    <h2>プレビューフォーム</h2>
       <h3> {{ item.description }}</h3>
-      <img src="{{ item.img.url }}"/>
-    </p>
+      <img width="70%" src="{{ item.img.url }}"/>
+      <h3> {{ item.description }} をグレー化した画像</h3>
+      <img width="70%" src="{{ item.edittedImg.url }}"/>
+      <br>
+      <a href="{{ item.edittedImg.url }}" download="{{ item.edittedImg.description }}">ダウンロード(jpeg)</a>
+    <br>
     <a class="" href="{% url 'imgapp:upload' %}">戻る</a>
     <br>
     <a class="" href="{% url 'imgapp:complete' %}">OK</a>
