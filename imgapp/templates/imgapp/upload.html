@@ -12,15 +12,24 @@
 <title>画像編集入力フォーム</title>
 <div class="row">
   <div class="col-md-8">
-    <p>
-      入力フォーム
-    </p>
-    <form method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Upload</button>
-    </form>
-    <a class="" href="{% url 'imgapp:index' %}">戻る</a>
+    <div>
+      <h2>画像アップロードフォーム</h2>
+      <form method="post" enctype="multipart/form-data">
+          {% csrf_token %}
+          <div class="form">
+          {{ form.as_p }}
+          </div>
+          <div class="button-area">
+            <ul class="nav">
+              <li>
+                <a class="return" href="{% url 'imgapp:index' %}">戻る</a>
+              </li>
+              <li>
+                <button type="submit">アップロード</button>
+              </li>
+          </div>
+      </form>
+    </div>
   </div>
   <div class="col-md-4">
     {% include 'imgapp/sidebar.html' %}

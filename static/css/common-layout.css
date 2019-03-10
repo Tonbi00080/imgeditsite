@@ -18,24 +18,26 @@ body {
   height: 60px;
   background-color: #f5f5f5;
 }
+.col-md-8{
+  min-height:100%;
+  position: relative;
+}
 
 .col-md-4{
   background-color: #f5e0b3;
+  min-height:100%;
 }
 
 .footer {
   position: absolute;
   bottom: 0;
   width: 100%;
+
+  text-align: center;
   /* Set the fixed height of the footer here */
   height: 60px;
   background-color: #f5f5f5;
 }
-
-
-/* Custom page CSS
--------------------------------------------------- */
-/* Not required for template or sticky footer method. */
 
 .container {
   width: auto;
@@ -44,4 +46,150 @@ body {
 }
 .container .text-muted {
   margin: 20px 0;
+}
+
+.main{
+  text-align:center;
+}
+
+h2 {
+  margin-left: 5%;
+}
+
+input {
+  font-size: 18px;
+}
+
+.form {
+  margin-left: 25%;
+  font-size: 18px;
+}
+
+.img-before{
+  margin: 5%;
+  width: 40%;
+  float: left;
+}
+.img-after{
+  margin: 5%;
+  width: 40%;
+  float: right;
+}
+
+.button-area {
+  clear: both;
+}
+
+ul.nav {
+  text-align: center;
+}
+
+ul.nav li{
+  display: inline-block;
+  margin: 20px
+}
+
+button{
+  font-size: initial;
+  width:160px;
+  padding:10px;
+  text-align:center;
+  background: #668ad8;/*ボタン色*/
+  color: #FFF;
+  border-bottom: solid 4px #627295;
+  border-radius: 3px;
+}
+
+button:active {
+  /*ボタンを押したとき*/
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);/*下に動く*/
+  border-bottom: none;/*線を消す*/
+}
+
+a.edit{
+  text-decoration: none;
+  display: inline-block;
+  width:160px;
+  padding:10px;
+  text-align: center;
+  background: #a8acb6;/*ボタン色*/
+  color: #222;
+  border-bottom: solid 4px #44464a;
+  border-radius: 3px;
+}
+
+a.edit:active {
+  /*ボタンを押したとき*/
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);/*下に動く*/
+  border-bottom: none;/*線を消す*/
+}
+
+a.return{
+  text-decoration: none;
+  display: block;
+  width:160px;
+  padding:10px;
+  text-align:center;
+  background: #626874;/*ボタン色*/
+  color: #FFF;
+  border-bottom: solid 4px #627295;
+  border-radius: 3px;
+}
+
+a.return:active {
+  /*ボタンを押したとき*/
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);/*下に動く*/
+  border-bottom: none;/*線を消す*/
+}
+
+a.ok{
+  text-decoration: none;
+  display: block;
+  padding: 10px;
+  width:160px;
+  text-align:center;
+  background: #668ad8;/*ボタン色*/
+  color: #FFF;
+  border-bottom: solid 4px #627295;
+  border-radius: 3px;
+}
+
+a.ok:active {
+  /*ボタンを押したとき*/
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);/*下に動く*/
+  border-bottom: none;/*線を消す*/
+}
+
+a.download{
+  margin:auto;
+  margin-top: 10px;
+  text-decoration: none;
+  display:block;
+  width:160px;
+  padding-top:10px;
+  padding-bottom:10px;
+  text-align:center;
+  background: #ade229;/*ボタン色*/
+  color: #FFF;
+  border-bottom: solid 4px #249512;
+  border-radius: 3px;
+}
+
+a.download:active {
+  /*ボタンを押したとき*/
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);/*下に動く*/
+  border-bottom: none;/*線を消す*/
+}
+
+.original{
+  border: solid 3px #626874;
+}
+
+.editted{
+  border: solid 3px #668ad8;
 }
