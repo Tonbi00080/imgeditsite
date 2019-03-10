@@ -13,16 +13,26 @@
 <div class="row">
   <div class="col-md-8">
     <h2>プレビューフォーム</h2>
-      <h3> {{ item.description }}</h3>
-      <img width="70%" src="{{ item.img.url }}"/>
-      <h3> {{ item.description }} をグレー化した画像</h3>
-      <img width="70%" src="{{ item.edittedImg.url }}"/>
-      <br>
-      <a href="{{ item.edittedImg.url }}" download="{{ item.edittedImg.description }}">ダウンロード(jpeg)</a>
-    <br>
-    <a class="" href="{% url 'imgapp:upload' %}">戻る</a>
-    <br>
-    <a class="" href="{% url 'imgapp:complete' %}">OK</a>
+      <div class="img-before">
+        <h3> {{ item.description }}</h3>
+        <img class="original" width="100%" src="{{ item.img.url }}"/>
+      </div>
+      <div class="img-after">
+        <h3> {{ item.description }} をグレー化した画像</h3>
+        <img class="editted" width="100%" src="{{ item.edittedImg.url }}"/>
+        <br>
+        <a class="download" href="{{ item.edittedImg.url }}" download="{{ item.edittedImg.description }}">ダウンロード(jpeg)</a>
+      </div>
+      <div class="button-area">
+        <ul class="nav">
+          <li>
+            <a class="return" href="{% url 'imgapp:upload' %}">戻る</a>
+          </li>
+          <li>
+            <a class="ok" href="{% url 'imgapp:complete' %}">OK</a>
+          </li>
+        </ul>
+      </div>
   </div>
   <div class="col-md-4">
     {% include 'imgapp/sidebar.html' %}

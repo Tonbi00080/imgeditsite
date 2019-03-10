@@ -15,7 +15,13 @@
     <p>
       ご利用ありがとうございました。
     </p>
-    <a class="" href="{% url 'imgapp:index' %}">トップ画面へ</a>
+    <div class="button-area">
+      <ul class="nav">
+        <li>
+          <a class="ok" href="{% url 'imgapp:index' %}">トップ画面へ</a>
+        </li>
+      </ul>
+    </div>
   </div>
   <div class="col-md-4">
     {% include 'imgapp/sidebar.html' %}
