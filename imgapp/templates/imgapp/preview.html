@@ -9,24 +9,24 @@
 <html>
 {% include 'imgapp/header.html' %}
 <body>
-<title>画像編集プレビューフォーム</title>
+<title>画像編集ダウンロード</title>
 <div class="row">
   <div class="col-md-8">
     <h2>プレビューフォーム</h2>
       <div class="img-before">
-        <h3> {{ item.description }}</h3>
+        <h3> {{ item.name }}</h3>
         <img class="original" width="100%" src="{{ item.img.url }}"/>
       </div>
       <div class="img-after">
-        <h3> {{ item.description }} をグレー化した画像</h3>
+        <h3> {{ item.name }}の{{ item.cvt_type }}</h3>
         <img class="editted" width="100%" src="{{ item.edittedImg.url }}"/>
         <br>
-        <a class="download" href="{{ item.edittedImg.url }}" download="{{ item.edittedImg.description }}">ダウンロード(jpeg)</a>
+        <a class="download" href="{{ item.edittedImg.url }}" download="{{ item.edittedImg.name }}">ダウンロード(jpeg)</a>
       </div>
       <div class="button-area">
         <ul class="nav">
           <li>
-            <a class="return" href="{% url 'imgapp:upload' %}">戻る</a>
+            <a class="return" href="{% url 'imgapp:upload' %}?cvt_param={{ param.cvt_param|urlencode }}">戻る</a>
           </li>
           <li>
             <a class="ok" href="{% url 'imgapp:complete' %}">OK</a>

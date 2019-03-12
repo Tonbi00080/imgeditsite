@@ -20,7 +20,7 @@
       </p>
       <img vspace="5px" hspace="5px" width="60%" height="60%" src="{% static "img/testdog_gray.jpg" %}" alt="gray-dog">
       <p>
-        <a class="edit" href="upload">白黒画像を作る</a>
+        <a class="edit" href="{% url 'imgapp:upload' %}?cvt_param={{ "gray"|urlencode }}">白黒画像を作る</a>
       </p>
     </div>
   </div>
