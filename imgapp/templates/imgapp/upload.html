@@ -17,6 +17,7 @@
       <form method="post" enctype="multipart/form-data">
           {% csrf_token %}
           <div class="form">
+          <p>編集タイプ：{{ param.cvt_type }}</p>
           {{ form.as_p }}
           </div>
           <div class="button-area">
