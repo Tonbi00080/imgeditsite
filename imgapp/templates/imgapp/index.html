@@ -22,10 +22,19 @@
       <p>
         <a class="edit gray" href="{% url 'imgapp:upload' %}?cvt_param={{ "gray"|urlencode }}">グレースケール画像を作る</a>
       </p>
-      <img vspace="5px" hspace="5px" width="60%" height="60%" src="{% static "img/monodog_monochrome.jpg" %}" alt="gray-dog">
+      <img vspace="5px" hspace="5px" width="60%" height="60%" src="{% static "img/monodog_monochrome.jpg" %}" alt="monochrome-dog">
       <p>
         <a class="edit monochrome" href="{% url 'imgapp:upload' %}?cvt_param={{ "monochrome"|urlencode }}">モノクロ画像を作る</a>
       </p>
+      <img vspace="5px" hspace="5px" width="60%" height="60%" src="{% static "img/sutehage3_mosaic.jpg" %}" alt="mosaic-sutehage">
+      <p>
+        <a class="edit mosaic" href="{% url 'imgapp:upload' %}?cvt_param={{ "mosaic"|urlencode }}">顔モザイク画像を作る</a>
+      </p>
+      <img vspace="5px" hspace="5px" width="60%" height="60%" src="{% static "img/salary_man_convolute.jpg" %}" alt="conv-man">
+      <p>
+        <a class="edit convolute" href="{% url 'imgapp:upload' %}?cvt_param={{ "convolute"|urlencode }}">ぼかし画像を作る</a>
+      </p>
+
     </div>
   </div>
   <div class="col-md-4">
