@@ -23,7 +23,7 @@ def upload(request):
                 editImage(item.img.url, item.name, cvt_param)
                 item.edittedImg = setOutputPath(item.name, cvt_param)
                 item.save()
-                param ={
+                param = {
                     'cvt_param': cvt_param
                 }
                 return render(request,'imgapp/preview.html',{
@@ -35,13 +35,13 @@ def upload(request):
             form = ImageForm()
             cvt_param = request.GET.get("cvt_param")
             cvt_type = setLabelCvtType(cvt_param)
-            param ={
+            param = {
                 'cvt_type': cvt_type
             }
-        return render(request, 'imgapp/upload.html',{
-        'form': form,
-        'param': param
-        })
+            return render(request, 'imgapp/upload.html',{
+            'form': form,
+            'param': param
+            })
     else:
         return render(request, 'imgapp/error.html')
 
