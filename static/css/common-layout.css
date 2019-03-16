@@ -110,12 +110,9 @@ button:active {
 a.edit{
   text-decoration: none;
   display: inline-block;
-  width:160px;
-  padding:10px;
+  width: 240px;
+  padding: 10px;
   text-align: center;
-  background: #a8acb6;/*ボタン色*/
-  color: #222;
-  border-bottom: solid 4px #44464a;
   border-radius: 3px;
 }
 
@@ -124,6 +121,18 @@ a.edit:active {
   -webkit-transform: translateY(4px);
   transform: translateY(4px);/*下に動く*/
   border-bottom: none;/*線を消す*/
+}
+
+.gray{
+  background: #a8acb6;/*ボタン色*/
+  color: #222;
+  border-bottom: solid 4px #222;
+}
+
+.monochrome{
+  background: #dbd6d6;/*ボタン色*/
+  color: #222;
+  border-bottom: solid 4px #575454;
 }
 
 a.return{
