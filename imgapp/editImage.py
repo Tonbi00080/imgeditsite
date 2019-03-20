@@ -15,27 +15,27 @@ def setLabelCvtType(cvt_param):
 
     return cvt_type
 
-def editImage(url, name, cvt_param):
+def editImage(name, cvt_param):
     if cvt_param == "gray":
-        convertToGray(url, name, cvt_param)
+        convertToGray(name, cvt_param)
     elif cvt_param == "monochrome":
-        convertToThreshold(url, name, cvt_param)
+        convertToThreshold(name, cvt_param)
     elif cvt_param == "mosaic":
-        convertToMosaic(url, name, cvt_param)
+        convertToMosaic(name, cvt_param)
     elif cvt_param == "convolute":
-        convolute(url, name, cvt_param)
+        convolute(name, cvt_param)
 
 # グレースケールに変換
-def convertToGray(url, name, cvt_param):
-    img = readImg(url)
+def convertToGray(name, cvt_param):
+    img = readImg(name)
     edittedImg = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     output = decideOutputPath(name, cvt_param)
     cv2.imwrite(output, edittedImg)
 
 # モノクロ画像に変換
 # グレースケールに変換+閾値処理
-def convertToThreshold(url, name, cvt_param):
-    img = readImg(url)
+def convertToThreshold(name, cvt_param):
+    img = readImg(name)
     # 閾値を指定
     threshhold = 150
     # グレースケール化
@@ -46,14 +46,14 @@ def convertToThreshold(url, name, cvt_param):
     cv2.imwrite(output, edittedImg)
 
 # モザイク画像に変換
-def convertToMosaic(url, name, cvt_param):
+def convertToMosaic(name, cvt_param):
     # カスケードファイルを指定して、検出器を作成
     cascade_file = settings.BASE_DIR + "/imgapp/cascade/haarcascade_frontalface_alt.xml"
     # カスケード分類器のファイルを読み込む
     cascade = cv2.CascadeClassifier(cascade_file)
 
     # 画像を読み込んでグレースケールに変換
-    img = readImg(url)
+    img = readImg(name)
     img_gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
     # 顔認識を実行 顔の位置の配列(x,y,w,h)
@@ -61,7 +61,7 @@ def convertToMosaic(url, name, cvt_param):
 
     # 結果を確認
     if len(face_list) == 0:
-        pass
+        edittedImg = img
 
     # 認識した部分にモザイク
     for(x,y,w,h) in face_list:
@@ -71,7 +71,7 @@ def convertToMosaic(url, name, cvt_param):
     cv2.imwrite(output, edittedImg)
 
 def convolute(url, name, cvt_param):
-    img = readImg(url)
+    img = readImg(name)
     # 5*5のウィンドウを指定して、25で平均値をとる
     kernel = np.ones((10,10),np.float32)/100
     edittedImg = cv2.filter2D(img,-1,kernel)
@@ -79,8 +79,8 @@ def convolute(url, name, cvt_param):
     cv2.imwrite(output, edittedImg)
 
 # 画像を読みこむ
-def readImg(url):
-    path = settings.BASE_DIR + url
+def readImg(name):
+    path = settings.BASE_DIR + "/media/img/" + name + ".jpg"
     img = cv2.imread(path)
     return img
 
