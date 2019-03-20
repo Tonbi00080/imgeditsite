@@ -20,7 +20,7 @@ def upload(request):
                 # descriptionに入力した値と同じデータの画像を取得する
                 item = Image.objects.get(name=form.cleaned_data['name'])
                 item.cvt_type = setLabelCvtType(cvt_param)
-                editImage(item.img.url, item.name, cvt_param)
+                editImage(item.name, cvt_param)
                 item.edittedImg = setOutputPath(item.name, cvt_param)
                 item.save()
                 param ={
