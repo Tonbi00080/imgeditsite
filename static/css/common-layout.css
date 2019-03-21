@@ -24,8 +24,11 @@ body {
 }
 
 .col-md-4{
-  background-color: #f5e0b3;
   min-height:100%;
+}
+
+.side {
+  background-color: #f5e0b3;
 }
 
 .footer {
@@ -61,23 +64,19 @@ input {
 }
 
 .form {
-  margin-left: 25%;
+  margin-left: 10%;
   font-size: 18px;
 }
 
 .img-before{
   margin: 5%;
-  width: 40%;
+  width: 45%;
   float: left;
 }
 .img-after{
   margin: 5%;
-  width: 40%;
+  width: 45%;
   float: right;
-}
-
-.button-area {
-  clear: both;
 }
 
 ul.nav {
@@ -105,6 +104,10 @@ button:active {
   -webkit-transform: translateY(4px);
   transform: translateY(4px);/*下に動く*/
   border-bottom: none;/*線を消す*/
+}
+
+.col-md-6 p {
+    text-align: center;
 }
 
 a.edit{

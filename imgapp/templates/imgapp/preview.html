@@ -13,30 +13,30 @@
 <div class="row">
   <div class="col-md-8">
     <h2>プレビューフォーム</h2>
-      <div class="img-before">
+    <div class="row">
+      <div class="col-md-6">
         <h3> {{ item.name }}</h3>
-        <img class="original" width="100%" src="{{ item.img.url }}"/>
+        <img class="original" height="50%" width="100%" src="{{ item.img.url }}"/>
       </div>
-      <div class="img-after">
+      <div class="col-md-6">
         <h3> {{ item.name }}の{{ item.cvt_type }}</h3>
-        <img class="editted" width="100%" src="{{ item.edittedImg.url }}"/>
+        <img class="editted" height="50%" width="100%" src="{{ item.edittedImg.url }}"/>
         <br>
         <a class="download" href="{{ item.edittedImg.url }}" download="{{ item.edittedImg.name }}">ダウンロード(jpeg)</a>
       </div>
-      <div class="button-area">
-        <ul class="nav">
-          <li>
-            <a class="return" href="{% url 'imgapp:upload' %}?cvt_param={{ param.cvt_param|urlencode }}">戻る</a>
-          </li>
-          <li>
-            <a class="ok" href="{% url 'imgapp:complete' %}">OK</a>
-          </li>
-        </ul>
-      </div>
+    </div>
+    <div class="button-area">
+      <ul class="nav">
+        <li>
+          <a class="return" href="{% url 'imgapp:upload' %}?cvt_param={{ param.cvt_param|urlencode }}">戻る</a>
+        </li>
+        <li>
+          <a class="ok" href="{% url 'imgapp:complete' %}">OK</a>
+        </li>
+      </ul>
+    </div>
   </div>
-  <div class="col-md-4">
-    {% include 'imgapp/sidebar.html' %}
-  </div>
+  {% include 'imgapp/sidebar.html' %}
 </div>
 </body>
 {% include 'imgapp/footer.html' %}
