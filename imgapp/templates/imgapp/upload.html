@@ -15,26 +15,24 @@
     <div>
       <h2>画像アップロードフォーム</h2>
       <form method="post" enctype="multipart/form-data">
-          {% csrf_token %}
-          <div class="form">
+        {% csrf_token %}
+        <div class="form">
           <p>編集タイプ：{{ param.cvt_type }}</p>
           {{ form.as_p }}
-          </div>
-          <div class="button-area">
-            <ul class="nav">
-              <li>
-                <a class="return" href="{% url 'imgapp:index' %}">戻る</a>
-              </li>
-              <li>
-                <button type="submit">アップロード</button>
-              </li>
-          </div>
+        </div>
+        <div class="button-area">
+          <ul class="nav">
+            <li>
+              <a class="return" href="{% url 'imgapp:index' %}">戻る</a>
+            </li>
+            <li>
+              <button type="submit">アップロード</button>
+            </li>
+        </div>
       </form>
     </div>
   </div>
-  <div class="col-md-4">
-    {% include 'imgapp/sidebar.html' %}
-  </div>
+  {% include 'imgapp/sidebar.html' %}
 </div>
 </body>
 {% include 'imgapp/footer.html' %}
