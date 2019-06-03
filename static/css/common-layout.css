@@ -6,17 +6,17 @@ html {
 }
 body {
   /* Margin top by header height */
-  margin-top: 60px;
+  margin-top: 100px;
   /* Margin bottom by footer height */
-  margin-bottom: 60px;
+  margin-bottom: 100px;
 }
 .header {
   position: absolute;
   top: 0;
   width: 100%;
   /* Set the fixed height of the header here */
-  height: 60px;
-  background-color: #f5f5f5;
+  height: 100px;
+  background-color: #9d9b9b;
 }
 .col-md-8{
   min-height:100%;
@@ -38,8 +38,8 @@ body {
 
   text-align: center;
   /* Set the fixed height of the footer here */
-  height: 60px;
-  background-color: #f5f5f5;
+  height: 100px;
+  background-color: #9d9b9b;
 }
 
 .container {
